@@ -82,6 +82,8 @@ public class JobData {
             if (aValue.contains(value)) {
                 jobs.add(row);
             }
+
+
         }
 
         return jobs;

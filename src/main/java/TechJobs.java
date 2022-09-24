@@ -123,15 +123,17 @@ public class TechJobs {
         // each job is a hashmap in an array
         // use a nested for loop to iterate through the arraylist first, then the hashmap
 
-        for (HashMap<String, String> job : someJobs){
-            String jobInfo = "\n*****\n";
-
-            for(Map.Entry<String, String> jobColumn : job.entrySet()){
-                jobInfo += (jobColumn.getKey() + ": " + jobColumn.getValue() + "\n");
+        if (someJobs.isEmpty()){
+            System.out.print("No Results");
+        }
+        for (HashMap<String, String> job : someJobs) {
+                String jobInfo = "\n*****\n";
+                for (Map.Entry<String, String> jobColumn : job.entrySet()) {
+                    jobInfo += (jobColumn.getKey() + ": " + jobColumn.getValue() + "\n");
                 }
-            jobInfo += "*****";
-            System.out.println(jobInfo);
-            }
+                jobInfo += "*****";
+                System.out.println(jobInfo);
+        }
         }
 
     }
