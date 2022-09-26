@@ -66,6 +66,7 @@ public class TechJobs {
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
+
             }
         }
     }
@@ -119,7 +120,21 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        // each job is a hashmap in an array
+        // use a nested for loop to iterate through the arraylist first, then the hashmap
 
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()){
+            System.out.print("No Results");
+        }
+        for (HashMap<String, String> job : someJobs) {
+                String jobInfo = "\n*****\n";
+                for (Map.Entry<String, String> jobColumn : job.entrySet()) {
+                    jobInfo += (jobColumn.getKey() + ": " + jobColumn.getValue() + "\n");
+                }
+                jobInfo += "*****";
+                System.out.println(jobInfo);
+        }
+        }
+
     }
-}
+
